@@ -32,12 +32,12 @@ POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 ```
 
-[//]: # (![connected_postgres]&#40;images/connected_postgres.png&#41;)
+
 <div align="center">
   <img src="images/connected_postgres.png" alt="connected_postgres" width="600"/>
 </div>
 
-[//]: # (![credentials_postgres]&#40;images/credentials_postgres.png&#41;)
+<p></p>
 <div align="center">
   <img src="images/credentials_postgres.png" alt="credentials_postgres" width="600"/>
 </div>
@@ -60,23 +60,20 @@ localhost:5555
 ```
 В результате, в разделе tasks можно будет увидеть следующую картину:
 
-[//]: # (![celery_flower_tasks]&#40;images/celery_flower_tasks.png&#41;)
-
 <div align="center">
   <img src="images/celery_flower_tasks.png" alt="celery_flower_tasks" width="600"/>
 </div>
 
 ## Экспорт данных из БД postgres в формат json.
 Для экспорта данных в json-формат, например таблицы contract_data, можно 
-использовать следующую команду:
+использовать следующую команду (из директории где располагается docker-compose.yml), 
+запустив её из оболочки контейнера db_pytoniq:
 ```
-psql -U postgres -d postgres -c "COPY (SELECT row_to_json(contract_data) FROM contract_data) TO STDOUT" > /var/lib/postgresql/data/contract_data.json
+docker-compose exec db_pytoniq psql -U postgres -d postgres -c "COPY (SELECT row_to_json(contract_data) FROM contract_data) TO STDOUT" > /var/lib/postgresql/data/contract_data.json
 ```
 
 В результате будет создан файл с выгруженной таблицей contract_data.json,
 в дериктории PytoniqProject/postgres_data:
-
-[//]: # (![contract_data.json]&#40;images/contract_data.json.png&#41;)
 
 <div align="center">
   <img src="images/contract_data.json.png" alt="contract_data.json" width="600"/>
