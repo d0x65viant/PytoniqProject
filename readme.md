@@ -34,7 +34,7 @@ POSTGRES_PASSWORD=postgres
 ![connected_postgres](images/connected_postgres.png)
 
 [//]: # (![credentials_postgres]&#40;images/credentials_postgres.png&#41;)
-<img src="images/credentials_postgres.png" alt="credentials_postgres" width="500"/>
+<img src="images/credentials_postgres.png" alt="credentials_postgres" width="400"/>
 
 При просмотре содержимого таблицы `contract_data` можно увидеть следующий
 результат:
