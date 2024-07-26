@@ -35,8 +35,10 @@ services:
       - "5555:5555"
 
     command: >
-      sh -c 'chmod +x /home/app/PytoniqProject/entrypoint.sh && 
-      /home/app/PytoniqProject/entrypoint.sh'
+      sh -c 'celery -A worker.celery_app worker --loglevel=info & 
+             celery -A worker.celery_app flower & 
+             sleep 10 && 
+             python __main__.py'
 
     depends_on:
       db_pytoniq:
