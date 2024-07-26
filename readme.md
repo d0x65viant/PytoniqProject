@@ -31,17 +31,24 @@ POSTGRES_DB=postgres
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
 ```
-![connected_postgres](images/connected_postgres.png)
+
+[//]: # (![connected_postgres]&#40;images/connected_postgres.png&#41;)
+<div align="center">
+  <img src="images/connected_postgres.png" alt="connected_postgres" width="600"/>
+</div>
 
 [//]: # (![credentials_postgres]&#40;images/credentials_postgres.png&#41;)
 <div align="center">
   <img src="images/credentials_postgres.png" alt="credentials_postgres" width="600"/>
 </div>
 
-
 При просмотре содержимого таблицы `contract_data` можно увидеть следующий
 результат:
-![view_all_row_transactions_contract_data_table](images/view_all_row_transactions_contract_data_table.png)
+
+[//]: # (![view_all_row_transactions_contract_data_table]&#40;images/view_all_row_transactions_contract_data_table.png&#41;)
+<div align="center">
+  <img src="images/view_all_row_transactions_contract_data_table.png" alt="view_all_row_transactions_contract_data_table" width="600"/>
+</div>
 
 ## Просмотр очереди задач celery во flower.
 Flower — небольшое веб-приложение, для мониторинга в real-time очередей задач,
@@ -52,7 +59,12 @@ Flower — небольшое веб-приложение, для монитор
 localhost:5555
 ```
 В результате, в разделе tasks можно будет увидеть следующую картину:
-![celery_flower_tasks](images/celery_flower_tasks.png)
+
+[//]: # (![celery_flower_tasks]&#40;images/celery_flower_tasks.png&#41;)
+
+<div align="center">
+  <img src="images/celery_flower_tasks.png" alt="celery_flower_tasks" width="600"/>
+</div>
 
 ## Экспорт данных из БД postgres в формат json.
 Для экспорта данных в json-формат, например таблицы contract_data, можно 
@@ -63,5 +75,10 @@ psql -U postgres -d postgres -c "COPY (SELECT row_to_json(contract_data) FROM co
 
 В результате будет создан файл с выгруженной таблицей contract_data.json,
 в дериктории PytoniqProject/postgres_data:
-![contract_data.json](images/contract_data.json.png)
+
+[//]: # (![contract_data.json]&#40;images/contract_data.json.png&#41;)
+
+<div align="center">
+  <img src="images/contract_data.json.png" alt="contract_data.json" width="600"/>
+</div>
 
