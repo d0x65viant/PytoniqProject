@@ -1,12 +1,13 @@
 # PytoniqProject
 Решение тестового задания для компании Artwell.
 
-<div align="center">
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/python.svg" alt="Python" width="50"/>
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/redis.svg" alt="Redis" width="50"/>
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/postgresql.svg" alt="Postgres" width="50"/>
-  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/celery.svg" alt="Celery" width="50"/>
-</div>
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Redis-D82C20?style=flat&logo=redis&logoColor=white" alt="Redis">
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white" alt="Postgres"/>
+  <img src="https://img.shields.io/badge/Celery-37814A?style=flat&logo=celery&logoColor=white" alt="Celery"/>
+</p>
+
 
 
 
