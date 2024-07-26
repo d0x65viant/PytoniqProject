@@ -81,7 +81,7 @@ async def main():
         await BlockScanner(client=client, block_handler=handle_block).run()
 
     except Exception as e:
-        (f"Error timeout connect: {e}")
+        print(f"Error timeout connect: {e}")
 
 
 if __name__ == '__main__':
