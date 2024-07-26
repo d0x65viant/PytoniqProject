@@ -38,14 +38,15 @@ POSTGRES_PASSWORD=postgres
 </div>
 
 <p></p>
+
 <div align="center">
   <img src="images/credentials_postgres.png" alt="credentials_postgres" width="600"/>
 </div>
 
+<p></p>
 При просмотре содержимого таблицы `contract_data` можно увидеть следующий
 результат:
 
-[//]: # (![view_all_row_transactions_contract_data_table]&#40;images/view_all_row_transactions_contract_data_table.png&#41;)
 <div align="center">
   <img src="images/view_all_row_transactions_contract_data_table.png" alt="view_all_row_transactions_contract_data_table" width="600"/>
 </div>
