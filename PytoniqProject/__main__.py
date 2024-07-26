@@ -80,7 +80,7 @@ async def main():
         await client.connect()
         await BlockScanner(client=client, block_handler=handle_block).run()
 
-    except except Exception as e:
+    except Exception as e:
         (f"Error timeout connect: {e}")
 
 
