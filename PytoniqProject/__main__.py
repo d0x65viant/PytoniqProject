@@ -73,11 +73,15 @@ client = LiteClient.from_mainnet_config(ls_i=14, trust_level=2, timeout=20)
 
 
 async def main():
-    initializer = Migrations(Base)
-    initializer.migrate()
+    try:
+        initializer = Migrations(Base)
+        initializer.migrate()
 
-    await client.connect()
-    await BlockScanner(client=client, block_handler=handle_block).run()
+        await client.connect()
+        await BlockScanner(client=client, block_handler=handle_block).run()
+
+    except except Exception as e:
+        (f"Error timeout connect: {e}")
 
 
 if __name__ == '__main__':
