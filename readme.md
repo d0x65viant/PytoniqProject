@@ -41,13 +41,13 @@ POSTGRES_PASSWORD=postgres
 
 
 <div align="center">
-  <img src="images/connected_postgres.png" alt="connected_postgres" width="600"/>
+  <img src="images/connected_postgres.png" alt="connected_postgres" width="400"/>
 </div>
 
 <p></p>
 
 <div align="center">
-  <img src="images/credentials_postgres.png" alt="credentials_postgres" width="600"/>
+  <img src="images/credentials_postgres.png" alt="credentials_postgres" width="400"/>
 </div>
 
 <p></p>
