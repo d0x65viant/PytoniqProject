@@ -1,6 +1,15 @@
 # PytoniqProject
 Решение тестового задания для компании Artwell.
 
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/python.svg" alt="Python" width="50"/>
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/redis.svg" alt="Redis" width="50"/>
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/postgresql.svg" alt="Postgres" width="50"/>
+  <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/celery.svg" alt="Celery" width="50"/>
+</div>
+
+
+
 ## Как собрать и запустить проект?
 Для сборки и запуска проекта, необходимо из главной дериктории (где располагается docker-compose.yml) 
 проекта, выполнить следующую команду:
