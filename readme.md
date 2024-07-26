@@ -1,15 +1,12 @@
-# PytoniqProject
-Решение тестового задания для компании Artwell.
 
+<h1 align="center">PytoniqProject</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python"/>
   <img src="https://img.shields.io/badge/Redis-D82C20?style=flat&logo=redis&logoColor=white" alt="Redis">
   <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white" alt="Postgres"/>
   <img src="https://img.shields.io/badge/Celery-37814A?style=flat&logo=celery&logoColor=white" alt="Celery"/>
 </p>
-
-
-
+Решение тестового задания для компании Artwell.
 
 ## Как собрать и запустить проект?
 Для сборки и запуска проекта, необходимо из главной дериктории (где располагается docker-compose.yml) 
