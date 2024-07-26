@@ -1,0 +1,60 @@
+version: '3.9'
+
+services:
+  db_pytoniq:
+    image: postgres:16-alpine3.20
+    restart: always
+    container_name: postgres_pytoniq
+    volumes:
+      - ./PytoniqProject/postgres_data:/var/lib/postgresql/data
+    env_file:
+      - ./PytoniqProject/.env.psgs
+    ports:
+      - "5431:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 10s
+      retries: 5
+
+    networks:
+      - pytoniq_network
+
+  pytoniq:
+    build:
+      dockerfile: Dockerfile.python
+
+    restart: always
+
+    volumes:
+      - ./PytoniqProject:/home/app/PytoniqProject
+
+    env_file:
+      - ./PytoniqProject/.env.ptnq
+
+    ports:
+      - "5555:5555"
+
+    command: >
+      sh -c 'chmod +x /home/app/PytoniqProject/entrypoint.sh && 
+      /home/app/PytoniqProject/entrypoint.sh'
+
+    depends_on:
+      db_pytoniq:
+        condition: service_healthy
+
+    networks:
+      - pytoniq_network
+
+  #-----------------------------------------------------------------------------
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    depends_on:
+      - pytoniq
+    networks:
+      - pytoniq_network
+
+networks:
+  pytoniq_network:
