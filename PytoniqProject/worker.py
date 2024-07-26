@@ -22,7 +22,7 @@ celery_app = Celery('worker',
 # Конфигурация Celery
 celery_app.conf.update(
     worker_prefetch_multiplier=1,
-    task_annotations={'worker.process_address': {'rate_limit': '5/m'}}
+    task_annotations={'worker.process_address': {'rate_limit': '15/m'}}
 )
 
 client = LiteClient.from_mainnet_config(ls_i=14, trust_level=2, timeout=20)
