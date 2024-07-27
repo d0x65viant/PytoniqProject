@@ -6,13 +6,11 @@ from celery import Celery
 from sqlalchemy.orm import Session
 from datetime import datetime
 from Modules.database import get_db
-from Modules.models import ContractData
+from Modules.models import ContractData, TonTransaction
 
 # Настройка логирования
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
-
-
 
 # Настройка Celery
 celery_app = Celery('worker',
@@ -31,8 +29,11 @@ is_client_connected = False
 async def initialize_client():
     global is_client_connected
     if not is_client_connected:
-        await client.connect()
-        is_client_connected = True
+        try:
+            await client.connect()
+            is_client_connected = True
+        except Exception as e:
+            print(f"Error connect: {e}")
 
 async def fetch_contract_code_and_data(client, address):
     '''
@@ -87,15 +88,18 @@ def process_address(transaction_id, raw_address, user_friendly_address, is_src):
         contract_data.src_address = raw_address
         contract_data.src_code = code.data if code else None
         contract_data.src_data = data.data if data else None
-
     else:
         logger.info(f"Updating dest_address, dest_code, and dest_data for transaction_id: {transaction_id}")
         contract_data.dest_address = raw_address
         contract_data.dest_code = code.data if code else None
         contract_data.dest_data = data.data if data else None
 
-    contract_data.status = 1
-    contract_data.unixtime = int(datetime.utcnow().timestamp())
+    # Обновление полей в TonTransaction
+    logger.info(f"Updating status and unixtime for transaction_id: {transaction_id}")
+    transaction = db.query(TonTransaction).filter_by(id=transaction_id).first()
+    if transaction:
+        transaction.status = 1
+        transaction.unixtime = int(datetime.utcnow().timestamp())
 
     logger.info(f"Committing changes to the database for transaction_id: {transaction_id}")
     db.commit()

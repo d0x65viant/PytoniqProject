@@ -19,18 +19,6 @@ class TonTransaction(Base):
 
     contract_data = relationship("ContractData", back_populates="tontransaction")
 
-    def __init__(self, src, dest, value_coins, ihr_fee, fwd_fee, created_lt, created_at):
-        self.src = src
-        self.dest = dest
-        self.value_coins = value_coins
-        self.ihr_fee = ihr_fee
-        self.fwd_fee = fwd_fee
-        self.created_lt = created_lt
-        self.created_at = created_at
-
-
-
-
 
 class ContractData(Base):
     __tablename__ = 'contract_data'
@@ -43,7 +31,5 @@ class ContractData(Base):
     src_data = Column(Text, nullable=True)
     dest_code = Column(Text, nullable=True)
     dest_data = Column(Text, nullable=True)
-    status = Column(Integer, default=0)
-    unixtime = Column(BigInteger, nullable=True)
 
     tontransaction = relationship("TonTransaction", back_populates="contract_data")
