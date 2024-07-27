@@ -41,7 +41,7 @@ POSTGRES_PASSWORD=postgres
 
 
 <div align="center">
-  <img src="images/connected_postgres.png" alt="connected_postgres" width="600"/>
+  <img src="https://github.com/d0x65viant/Images/blob/main/connected_postgres.png" alt="connected_postgres" width="600"/>
 </div>
 
 <p></p>
