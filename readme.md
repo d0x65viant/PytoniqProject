@@ -47,7 +47,7 @@ POSTGRES_PASSWORD=postgres
 <p></p>
 
 <div align="center">
-  <img src="images/credentials_postgres.png" alt="credentials_postgres" width="600"/>
+  <img src="https://github.com/d0x65viant/Images/blob/main/credentials_postgres.png" alt="credentials_postgres" width="600"/>
 </div>
 
 <p></p>
@@ -55,7 +55,7 @@ POSTGRES_PASSWORD=postgres
 результат:
 
 <div align="center">
-  <img src="images/view_all_row_transactions_contract_data_table.png" alt="view_all_row_transactions_contract_data_table" width="600"/>
+  <img src="https://github.com/d0x65viant/Images/blob/main/view_all_row_transactions_contract_data_table.png" alt="view_all_row_transactions_contract_data_table" width="600"/>
 </div>
 
 ## Просмотр очереди задач celery во flower.
@@ -69,7 +69,7 @@ localhost:5555
 В результате, в разделе tasks можно будет увидеть следующую картину:
 
 <div align="center">
-  <img src="images/celery_flower_tasks.png" alt="celery_flower_tasks" width="600"/>
+  <img src="https://github.com/d0x65viant/Images/blob/main/celery_flower_tasks.png" alt="celery_flower_tasks" width="600"/>
 </div>
 
 ## Экспорт данных из БД postgres в формат json.
@@ -84,6 +84,6 @@ docker-compose exec db_pytoniq psql -U postgres -d postgres -c "COPY (SELECT row
 в дериктории PytoniqProject/postgres_data:
 
 <div align="center">
-  <img src="images/contract_data.json.png" alt="contract_data.json" width="600"/>
+  <img src="https://github.com/d0x65viant/Images/blob/main/contract_data.json.png" alt="contract_data.json" width="600"/>
 </div>
 
