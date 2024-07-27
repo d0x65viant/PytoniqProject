@@ -1,4 +1,5 @@
 import asyncio
+from datetime import datetime
 from pytoniq_core import BlockIdExt
 from pytoniq import LiteClient
 from pytoniq_core import Address
@@ -52,7 +53,8 @@ async def handle_block(block: BlockIdExt):
             ihr_fee=transaction.in_msg.info.ihr_fee if getattr(transaction.in_msg.info, 'ihr_fee', None) else 0,
             fwd_fee=transaction.in_msg.info.fwd_fee if getattr(transaction.in_msg.info, 'fwd_fee', None) else 0,
             created_lt=transaction.in_msg.info.created_lt if getattr(transaction.in_msg.info, 'created_lt', None) else 0,
-            created_at=transaction.in_msg.info.created_at if getattr(transaction.in_msg.info, 'created_at', None) else 0
+            created_at=transaction.in_msg.info.created_at if getattr(transaction.in_msg.info, 'created_at', None) else 0,
+            unixtime=int(datetime.utcnow().timestamp())
         )
         db.add(transaction_entry)
         db.commit()
@@ -81,7 +83,7 @@ async def main():
         await BlockScanner(client=client, block_handler=handle_block).run()
 
     except Exception as e:
-        print(f"Error timeout connect: {e}")
+        print(f"Error connect: {e}")
 
 
 if __name__ == '__main__':
